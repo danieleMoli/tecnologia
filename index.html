@@ -1,0 +1,119 @@
+<!doctype html>
+<!--Scrivere in una pagina HTML con caratteristiche a piacere,
+ il codice Javascript per calcolare il reddito netto di una persona conoscendo la retribuzione oraria,
+ il numero di ore lavorate e la percentuale delle trattenute. 
+ L'utente inserisce questi dati e il programma visualizzerà il nominativo, il reddito lordo e il reddito netto.-->
+
+
+
+<html>
+	<head>
+		<style>
+			body{
+			
+			text-align:center;
+			}
+			h1{
+			color:red;
+			}
+			legend{
+			color:red;
+			font-size:2em;
+			}
+			#numero1{
+			text-align:center;
+			
+			}
+			#numero2{
+			text-align:center;
+		
+			}
+			
+			fieldset{
+			background-color:red;
+			margin-left:520px;
+			margin-right:520px
+			}
+		
+		</style>
+	</head>
+
+	<body>
+		<h1 align="center">Calcolatrice</h1>
+			
+																		<!--nella form ho inserito nome , cognome e i vari dati che servono per 
+																		calcolare lo stipendio netto e lo stipendio lordo-->
+		    <fieldset id="field"> 													<!--fieldset serve per fare il contorno-->
+			
+						
+					<input type="number" name="number1" placeholder="inserisci qui il primo numero" size="41"  id="numero1"  maxlength="4" required> <!-- required serve per evitare che si possa consegnare il modulo senza aver inserito quel dato-->
+				    
+					<select id="opera" name="operazioni" id="operatore">
+							
+							<option value="nessuna" selected></option>
+							<option value="1">+</option>
+							<option value="2">-</option>
+							<option value="3">*</option>
+							<option value="4">/</option>
+							<option value="5">^</option>
+							
+					</select>
+					
+					<input type="number" name="number2" placeholder="inserisci qui il secondo numero" size="41" id="numero2"  maxlength="4" required>
+						<br>
+						<br>
+						<br>
+						<button onclick="calcolo()" id="button">richiedi risultato</button>
+						<br>
+						<br>
+						<br>
+					
+					
+		  </fieldset>
+			<strong>risultato</strong> <br><br>
+			<p id="risulta">   </p>
+			
+			
+			
+		<script type="text/javascript" language="javascript">
+				function calcolo() {
+				
+				var x=document.getElementById("opera").value
+				switch(x){
+				
+					case "1":
+						var somma= (document.getElementById("numero1").value*1) + (document.getElementById("numero2").value*1); <!-- calcolo somma-->
+						document.getElementById("risulta").innerHTML="risulta : "+somma;<!-- assegnazione del risultato dopo la somma-->
+						
+					break;
+					
+					case "2":
+						var sottrazione= (document.getElementById("numero1").value - document.getElementById("numero2").value); <!-- calcolo sottrazione-->
+						document.getElementById("risulta").innerHTML="risulta : "+sottrazione;<!-- assegnazione del risultato dopo la sottrazione-->
+					break;
+					
+					case "3":
+						var moltiplicazione= (document.getElementById("numero1").value * document.getElementById("numero2").value); <!-- calcolo moltiplicazione-->
+						document.getElementById("risulta").innerHTML="risulta : "+moltiplicazione;<!-- assegnazione del risultato dopo la moltiplicazione-->
+						break;
+						
+					case "4":
+						var divisione= (document.getElementById("numero1").value / document.getElementById("numero2").value); <!-- calcolo divisione-->
+						document.getElementById("risulta").innerHTML="risulta : "+divisione;<!-- assegnazione del risultato dopo la divisione-->
+					break;
+					case "5":
+						var potenza= Math.pow((document.getElementById("numero1").value ),( document.getElementById("numero2").value)); <!-- calcolo potenza-->
+						document.getElementById("risulta").innerHTML="risulta : "+potenza;<!-- assegnazione del risultato dopo la potenza-->
+						
+					break;
+					default:
+					break;
+					}
+				
+				}
+				
+		</script>
+		
+	</body>
+	
+</html>
